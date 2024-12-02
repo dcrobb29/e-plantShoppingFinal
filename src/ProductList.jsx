@@ -254,8 +254,8 @@ const handlePlantsClick = (e) => {
                <img src="https://cdn.pixabay.com/photo/2020/08/05/13/12/eco-5465432_1280.png" alt="" />
                <a href="/" style={{textDecoration:'none'}}>
                         <div>
-                    <h3 style={{color:'white'}}>Paradise Nursery</h3>
-                    <i style={{color:'white'}}>Where Green Meets Serenity</i>
+                    <h3 style={{color:'white'}}>PvZ Nursery</h3>
+                    <i style={{color:'white'}}>Where Zombies Come to Die</i>
                     </div>
                     </a>
                 </div>
@@ -269,6 +269,19 @@ const handlePlantsClick = (e) => {
         {!showCart? (
         <div className="product-grid">
 
+            <div className="product-list">
+            {plantsArray[0].plants.map((item,index)=>(
+
+                <div className="product-card"> 
+                <div className="product-image">
+                    <img src= {item.image} alt={item.name}/>
+                </div>
+                <div className="product-title"> {item.name} </div>
+                <div> {item.cost} </div>
+                <button className= "product-button"> Add To Cart </button>
+                </div>
+            ))}
+            </div>
 
         </div>
  ) :  (
@@ -278,4 +291,8 @@ const handlePlantsClick = (e) => {
     );
 }
 
+
+
 export default ProductList;
+
+
